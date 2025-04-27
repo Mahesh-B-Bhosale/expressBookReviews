@@ -19,7 +19,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
         jwt.verify(token, "access", (err, user) => {
             if (!err) {
                 req.user = user;
-                next(); 
+                next();
             } else {
                 return res.status(403).json({ message: "User not authenticated" });
             }
